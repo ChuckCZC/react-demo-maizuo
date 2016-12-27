@@ -4,8 +4,8 @@
 	padding: 0
 	box-sizing: border-box
 body,button,input,select,textarea
-	font-family: 'Microsoft JhengHei','Microsoft Yahei',simsun,Tahoma,Verdana,Arial,sans-serif
-	-webkit-font-smoothing: antialiased
+	font-family: 'Microsoft YaHei', Tahoma, Helvetica, Arial, sans-serif
+	// -webkit-font-smoothing: antialiased
 
 h1, h2, h3, h4, h5, h6
 	font-size: 100%
@@ -38,3 +38,50 @@ a
 	color: inherit
 
 @import 'common'
+
+html,body
+	height: 100%
+	background: #e1e1e1
+
+.go-top
+	color: #fff
+	background: rgba(0,0,0,.7)
+	width: 50*$px
+	text-align: center
+	height: 50*$px
+	line-height: 50*$px
+	border-radius: 50%
+	position: fixed
+	z-index: 499
+	bottom: -100*$px
+	right: 20*$px
+	transition: .3s linear
+	&.active
+		bottom: 20*$px
+		transition: .3s linear
+	i
+		font-size: 24*$px
+.container
+	padding-top: 50*$px
+.child-view
+	// position: absolute
+	width: 100%
+	transition: all .2s cubic-bezier(.55,0,.1,1)
+.slide-left-enter, .slide-right-leave-active
+	opacity: 0
+	transform: translate(30*$px,0)
+.slide-left-leave-active, .slide-right-enter
+	opacity: 0
+	transform: translate(-30*$px 0)
+
+.list-complete-item 
+  transition: all .6s
+  display: inline-block
+  margin-right: 10px
+.list-complete-enter, .list-complete-leave-active 
+  opacity: 0
+  transform: translateY(30px)
+
+.list-complete-leave-active 
+  position: absolute
+
