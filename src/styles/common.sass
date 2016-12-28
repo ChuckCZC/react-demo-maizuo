@@ -29,3 +29,10 @@ $px: 1rem/20
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
+
+@mixin moreNoWrap($line:4)
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: $line
+  overflow: hidden
+  white-space: normal

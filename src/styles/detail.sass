@@ -1,5 +1,10 @@
 @import 'common'
 #detail
+	.no-tip
+		font-size: 14*$px
+		color: #a1a1a1
+		text-align: center
+		margin-top: 20*$px
 	.cover
 		img
 			width: 100%
@@ -26,6 +31,7 @@
 				&.p
 					line-height: 150%
 					margin-top: 5*$px
+					@include moreNoWrap
 	.go-pay
 		width: 160*$px
 		height: 35*$px

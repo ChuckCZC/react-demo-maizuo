@@ -59,6 +59,7 @@ module.exports = {
 		}]
 	},
 	plugins:[
+		require('autoprefixer'),
 		new webpack.DefinePlugin({
 			//process.argv：当前进程的命令行参数数组。
 			//process.env：指向当前shell的环境变量，比如process.env.HOME。
