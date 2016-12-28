@@ -22,8 +22,8 @@ class Header extends Component {
                 <div className="title">
                     <p>{title}</p>
                     <a className="go-city">广州<i className="icon iconfont icon-bottom"></i></a>
-                    <a className="go-mine"><i className="icon iconfont icon-people"></i></a>
                 </div>
+                <a className="go-mine"><i className="icon iconfont icon-people"></i></a>
             </div>
         )
     }

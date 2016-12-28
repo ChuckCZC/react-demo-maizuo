@@ -63,16 +63,6 @@ html,body
 		font-size: 24*$px
 .container
 	padding-top: 50*$px
-.child-view
-	// position: absolute
-	width: 100%
-	transition: all .2s cubic-bezier(.55,0,.1,1)
-.slide-left-enter, .slide-right-leave-active
-	opacity: 0
-	transform: translate(30*$px,0)
-.slide-left-leave-active, .slide-right-enter
-	opacity: 0
-	transform: translate(-30*$px 0)
 
 .list-complete-item 
   transition: all .6s
@@ -85,3 +75,20 @@ html,body
 .list-complete-leave-active 
   position: absolute
 
+.page-enter 
+	opacity: 0.01
+	transform: translate(30*$px,0)
+
+.page-enter.page-enter-active 
+	opacity: 1
+	transform: translate(0*$px,0)
+	transition: all .2s cubic-bezier(.55,0,.1,1)
+
+.page-leave 
+	opacity: 1
+	transform: translate(0*$px,0)
+
+.page-leave.page-leave-active
+	opacity: 0.01
+	transform: translate(-30*$px,0)
+	transition: all .2s cubic-bezier(.55,0,.1,1)

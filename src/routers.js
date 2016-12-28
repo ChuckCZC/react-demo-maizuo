@@ -1,15 +1,33 @@
 import React,{Component} from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import {Router,Route,Redirect,IndexRoute,browserHistory,hashHistory} from 'react-router'
 
 import home from './pages/home'
+import Header from './components/header'
+import Loading from './components/loading'
+
 
 class Roots extends Component {
+	/**
+	 * ReactCSSTransitionGroup内部的container需要个key
+	 * 因为ReactCSSTransitionGroup在过渡期间同时维护新老组件需要一个唯一标识加以区分
+	 * 而location.pathname代表当前访问的完整路径，合适不过
+	 */
 	render(){
 		return (
-			<div>{this.props.children}</div>
+			<div>
+				<Header />
+				<Loading />
+				<ReactCSSTransitionGroup  transitionName="page" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+					<div className="container" key={this.props.location.pathname}>
+						{this.props.children}
+					</div>
+				</ReactCSSTransitionGroup>
+			</div>
 		)
 	}
 }
+
 
 /**
  * browserHistory : 类似example.com/some/path
@@ -28,7 +46,17 @@ class Roots extends Component {
 const detail  = (location,cb) => {
 	require.ensure([],require => {
 		cb(null,require('./pages/detail').default)
-	},'detail')
+	},'detail/:id')
+}
+const film  = (location,cb) => {
+	require.ensure([],require => {
+		cb(null,require('./pages/film').default)
+	},'film/:type')
+}
+const cinema  = (location,cb) => {
+	require.ensure([],require => {
+		cb(null,require('./pages/cinema').default)
+	},'cinema/:id')
 }
 
 /**
@@ -47,6 +75,8 @@ const RouteConfig = (
 			<IndexRoute component={home} />
 			<Route path='home' component={home} />
 			<Route path='detail' getComponent={detail} />
+			<Route path='film' getComponent={film} />
+			<Route path='cinema' getComponent={cinema} />
 			<Redirect from='*' to='/' />
 		</Route>
 	</Router>
