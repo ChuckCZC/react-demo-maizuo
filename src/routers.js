@@ -13,13 +13,20 @@ class Roots extends Component {
 	 * 因为ReactCSSTransitionGroup在过渡期间同时维护新老组件需要一个唯一标识加以区分
 	 * 而location.pathname代表当前访问的完整路径，合适不过
 	 */
+	handleScroll(){
+		console.log(2,document.body.scrollTop);
+	}
+	// componentDidMount() {
+	// 	window.addEventListener('scroll',this.handleScroll.bind(this))
+	// }
+	
 	render(){
 		return (
 			<div>
 				<Header />
 				<Loading />
 				<ReactCSSTransitionGroup  transitionName="page" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-					<div className="container" key={this.props.location.pathname}>
+					<div className="container" onScroll={this.handleScroll} key={this.props.location.pathname}>
 						{this.props.children}
 					</div>
 				</ReactCSSTransitionGroup>

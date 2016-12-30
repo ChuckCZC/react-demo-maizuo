@@ -2,11 +2,11 @@ import * as types from '../types'
 import api from '../api'
 import * as utils from './com'
 
-function getNowMore(){
-    return {
-        type:types.CHANGE_NOWPLAYING_MORE
-    }
-}
+// export function getNowMore(){
+//     return {
+//         type:types.FILE_NOWPLAYING_NUM
+//     }
+// }
 function getNowPlaying(res){
     return {
         type:types.FILM_GET_NOWPLAYING,
@@ -23,11 +23,11 @@ export function fetchNowPlaying(page){
     }
 }
 
-function getComingMore(){
-    return {
-        type:types.CHANGE_COMING_MORE
-    }
-}
+// export function getComingMore(){
+//     return {
+//         type:types.FILM_COMINGSOON_NUM
+//     }
+// }
 function getComingSoon(res){
     return {
         type:types.FILM_GET_COMINGSOON,
