@@ -18,22 +18,20 @@ export default function filmState(state=initialState,action){
                 getNowMore:action.data.page.current < action.data.page.total ? true : false,
                 nowPlayingList:state.nowPlayingList.concat(action.data.films)
             })
-        // case types.FILE_NOWPLAYING_NUM:
-        //     return Object.assign({},state,{
-        //         ...state,
-        //         nowPage:state.nowPage+1,
-        //         getNowMore:false,
-        //     })
-        // case types.FILM_COMINGSOON_NUM:
-        //     return Object.assign({},state,{
-        //         ...state,
-        //         comingPage:state.comingPage+1,
-        //         getComingMore:false,
-        //     })
+        case types.CHANGE_NOWPLAYING_MORE:
+            return Object.assign({},state,{
+                ...state,
+                getNowMore:action.data,
+            })
+        case types.CHANGE_COMING_MORE:
+            return Object.assign({},state,{
+                ...state,
+                getComingMore:action.data,
+            })
         case types.FILM_GET_COMINGSOON:
             return Object.assign({},state,{
                 ...state,
-                nowPage:action.data.page.current,
+                comingPage:action.data.page.current,
                 getComingMore:action.data.page.current < action.data.page.total ? true : false,
                 comingSoonList:state.comingSoonList.concat(action.data.films)
             })

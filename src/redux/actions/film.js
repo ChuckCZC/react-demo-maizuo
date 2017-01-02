@@ -2,11 +2,12 @@ import * as types from '../types'
 import api from '../api'
 import * as utils from './com'
 
-// export function getNowMore(){
-//     return {
-//         type:types.FILE_NOWPLAYING_NUM
-//     }
-// }
+function getNowMore(status=false){
+    return {
+        type:types.CHANGE_NOWPLAYING_MORE,
+        data:status
+    }
+}
 function getNowPlaying(res){
     return {
         type:types.FILM_GET_NOWPLAYING,
@@ -16,18 +17,19 @@ function getNowPlaying(res){
 
 export function fetchNowPlaying(page){
     return (dispatch) => {
-        // dispatch(numNowPlaying())
+        dispatch(getNowMore()) //防止同一动作多次执行
         api.getNowPlayList(page,function(res){
             dispatch(getNowPlaying(res))
         })
     }
 }
 
-// export function getComingMore(){
-//     return {
-//         type:types.FILM_COMINGSOON_NUM
-//     }
-// }
+function getComingMore(status=false){
+    return {
+        type:types.CHANGE_COMING_MORE,
+        data:status
+    }
+}
 function getComingSoon(res){
     return {
         type:types.FILM_GET_COMINGSOON,
@@ -36,6 +38,7 @@ function getComingSoon(res){
 }
 export function fetchComingSoon(page){
     return (dispatch) => {
+        dispatch(getComingMore())
         api.getComingList(page,function(res){
             dispatch(getComingSoon(res))
         })

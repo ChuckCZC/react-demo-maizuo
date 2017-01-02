@@ -18,6 +18,9 @@
 	.tab-content
 		margin: 0 15*$px
 		.now-playing-list,.coming-soon-list
+			display: none
+			&.active
+				display: block
 			.item
 				@include box(justify,start)
 				padding: 15*$px 0

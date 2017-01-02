@@ -6,3 +6,9 @@ export function loading(status){
         loading:status
     }
 }
+export function pathname(pathname){
+    return {
+        type:types.CHANGE_PATHNAME,
+        data:pathname
+    }
+}

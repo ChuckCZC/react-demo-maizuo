@@ -4,7 +4,8 @@ const initialState = {
 	// isBack:false,
 	title:'title',
 	loading:0,
-	leftNavState:false
+	leftNavState:false,
+	pathname:'/'
 }
 
 export default function settingState(state=initialState,action){
@@ -24,6 +25,11 @@ export default function settingState(state=initialState,action){
 				...state,
 				leftNavState:action.leftNavState
 			});
+		case types.CHANGE_PATHNAME:
+			return Object.assign({},state,{
+				...state,
+				pathname:action.data
+			})
 		default:
 			return state
 	}

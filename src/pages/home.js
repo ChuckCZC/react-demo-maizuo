@@ -23,7 +23,6 @@ class Home extends Component {
     }
   }
   componentDidMount() {
-    console.log(this.props)
     this.props.actions.fetchBanner(() => {
       this.props.actions.fetchNowPlaying();
       this.props.actions.fetchComingSoon();
