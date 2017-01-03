@@ -13,6 +13,7 @@ class Detail extends Component {
   }
   shouldComponentUpdate (nextProps, nextState) {
     if(this.props.detail !== nextProps.detail){
+      // this.props.actions.changeTitle({title:nextProps.detail.name})
       return true;
     }else{
       return false;
@@ -35,7 +36,6 @@ class Detail extends Component {
   
   render(){
     const {detail} = this.props
-    console.log(detail)
     if(!detail){
       return (
         <div id="detail">

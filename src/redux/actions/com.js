@@ -12,3 +12,9 @@ export function pathname(pathname){
         data:pathname
     }
 }
+export function conf(settings){
+    return {
+        type:types.COM_CONF,
+        settings:settings
+    }
+}

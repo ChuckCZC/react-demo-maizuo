@@ -30,7 +30,7 @@ class Cinema extends Component {
     this.props.actions.fetchCinemaList(_id)
   }
   componentWillReceiveProps (nextProps) {
-    console.log(nextProps)
+    // console.log(nextProps)
     this.setState({
       area:nextProps.topArea
     })
@@ -69,7 +69,7 @@ class Cinema extends Component {
     return str;
   }
   changeArea(event,area){
-    console.log(event.target.parentNode.lastChild)
+    // console.log(event.target.parentNode.lastChild)
     if(this.state.area.pinyin == area.pinyin){
       area = {}
     }

@@ -1,4 +1,7 @@
 import React,{Component,PropTypes} from 'react'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import * as actions from '../redux/actions/com'
 import '../styles/header'
 
 class Header extends Component {
@@ -30,4 +33,15 @@ class Header extends Component {
     
 }
 
-export default Header ;
+const mapStateToProps = (state) => {
+    return {
+        title:state.settingState.title
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions:bindActionCreators(actions,dispatch)
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Header) ;

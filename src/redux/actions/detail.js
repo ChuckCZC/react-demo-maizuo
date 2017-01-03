@@ -18,3 +18,8 @@ export function fetchFilmDetail(id){
         })
     }
 }
+export function changeTitle(title){
+    return (dispatch) => {
+        dispatch(utils.conf(title))
+    }
+}

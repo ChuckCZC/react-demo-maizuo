@@ -2,7 +2,7 @@ import * as types from '../types'
 
 const initialState = {
 	// isBack:false,
-	title:'title',
+	title:'卖座电影',
 	loading:0,
 	leftNavState:false,
 	pathname:'/'
@@ -13,7 +13,7 @@ export default function settingState(state=initialState,action){
 		case types.COM_CONF:
 			return Object.assign({},state,{
 				...state,
-				...actions.settings
+				...action.settings
 			});
 		case types.COM_LOADING_STATUS:
 			return Object.assign({},state,{
