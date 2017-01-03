@@ -68,7 +68,8 @@ class Cinema extends Component {
     }
     return str;
   }
-  changeArea(area){
+  changeArea(event,area){
+    console.log(event.target.parentNode.lastChild)
     if(this.state.area.pinyin == area.pinyin){
       area = {}
     }
@@ -88,7 +89,7 @@ class Cinema extends Component {
     for(let item of district){
       str.push(
         <div className="item" key={++_key}>
-          <div onClick={()=>this.changeArea(item)} className="title">{item.name}</div>
+          <div onClick={(ev)=>this.changeArea(ev,item)} className="title">{item.name}</div>
           <div className={area.pinyin==item.pinyin ? 'list active':'list'}>{this.renderCinemaItem(item.pinyin)}</div>
         </div>
       )
