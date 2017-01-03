@@ -13,6 +13,9 @@
             .title
                 border-bottom: none
         .list
+            display: none
+            &.active
+                display: block
             .shop   
                 background: #fff
                 border-bottom: 1px solid #e1e1e1
@@ -42,7 +45,7 @@
                     .tip
                         padding: 5*$px 10*$px
                         span
-                            display: inline-block
+                            display: none
                             color: #fff
                             font-size: 11*$px
                             padding: 0*$px 4*$px
@@ -50,8 +53,10 @@
                             &.sundry
                                 background: #51add0
                                 margin-right: 8*$px
+                                display: inline-block
                             &.discount
                                 background: #ff9658
+                                display: inline-block
                     .area
                         color: #ccc
                         font-size: 13*$px

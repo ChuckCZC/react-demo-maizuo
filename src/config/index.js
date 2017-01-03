@@ -25,3 +25,13 @@ if ('addEventListener' in document) {
     FastClick.attach(document.body);
   }, false);
 }
+
+/**
+ * 对象数组去重，根据str属性
+ */
+Array.prototype.unique = function(str){
+	const seen = new Map()
+	return this.filter((a) => {
+		return !seen.has(a['name']) && seen.set(a['name'], 1)
+	})
+}
