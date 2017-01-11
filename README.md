@@ -1,5 +1,4 @@
-# React-demo-maizuo
-
+# React实战：模仿卖座电影
 > 使用React.js全家桶仿制[卖座电影](http://m.maizuo.com/v4/?co=maizuo)
 >
 > 仓库：[https://github.com/ChuckCZC/react-demo-maizuo](https://github.com/ChuckCZC/react-demo-maizuo)
